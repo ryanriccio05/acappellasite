@@ -16,7 +16,13 @@ const events = {
     "2025-09-05" : ["Auditions!"],
     "2025-09-06" : ["Callbacks!"],
     "2026-03-20" : ["A Cappella Palooza 2026!!"],
-    "2026-04-10" : ["Spring Concert with Measure Up!"],};
+    "2026-04-10" : ["Spring Concert with Measure Up!"],
+    "2026-11-06" : ["National Anthem at MBB game!"],
+    "2026-11-08" : ["Fall Concert!!"],
+    "2026-11-20" : ["MP Boston Tour!"],
+    "2026-11-21" : ["MP Boston Tour!"],
+    "2026-11-22" : ["MP Boston Tour!"],
+};
 
 // storing full name of all months in array
 const months = ["January", "February", "March", "April", "May", "June", "July",

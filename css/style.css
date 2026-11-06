@@ -1766,6 +1766,17 @@ figure.dotted-bg {
         color: #ffffff; }
 
 
+@media (prefers-reduced-motion: no-preference) {
+  .playlist-art {
+    transition: transform 250ms ease;
+  }
+
+  .service:hover .playlist-art,
+  .service:focus-within .playlist-art {
+    transform: rotate(-8deg);
+  }
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -1782,11 +1793,42 @@ figure.dotted-bg {
 
 /* Modal Content/Box */
 .modal-content {
+  isolation: isolate;
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.song-cover-rain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.song-cover-rain img {
+  position: absolute;
+  width: clamp(44px, 9vw, 84px);
+  aspect-ratio: 1;
+  opacity: 0.14;
+  border-radius: 5px;
+  transform: rotate(var(--cover-angle));
+  animation: song-cover-fall linear infinite;
+}
+
+@keyframes song-cover-fall {
+  from { top: -84px; }
+  to { top: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .song-cover-rain {
+    display: none;
+  }
 }
 
 /* The Close Button */
